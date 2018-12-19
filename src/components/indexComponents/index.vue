@@ -25,7 +25,6 @@ export default {
     },
     //生命周期层，
     mounted(){
-        console.log(this,'测试一下输出');
         this.txt='赋值'
     },
     //方法处理层
