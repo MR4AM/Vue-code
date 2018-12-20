@@ -1,9 +1,9 @@
-let utils={
-    getParams(that,par){
+class utils{
+    static getParams(that,par){
         return that.$route.params[par]
-    },
+    }
     //时间格式化
-    formatTime(time, cFormat) {
+    static formatTime(time, cFormat) {
         if (arguments.length === 0) return null
         if ((time + '').length === 10) {
             time = +time * 1000
@@ -34,6 +34,6 @@ let utils={
             return value || 0
         })
         return time_str
-    },
+    }
 }
 module.exports= utils;
