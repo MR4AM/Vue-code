@@ -5,7 +5,8 @@
         <p v-if="pshow">{{txt}}</p>
         <button v-on:click="test()">更改状态</button>
         <p v-for="(item,index) in testList">{{item}}</p>
-        <p v-on:click="linkTo()">使用方法跳转</p>
+        <p v-on:click="linkTo('test')">查看vant组件ui库实例组件</p>
+         <p v-on:click="linkTo('element')">查看element组件ui库实例组件</p>
         <router-link to='/test'>路由跳转</router-link>
     </div>
 </template>
@@ -32,9 +33,9 @@ export default {
         test(){
             this.pshow=!this.pshow;
         },
-        linkTo(){
+        linkTo(route){
             this.$router.push({
-                name:'test',
+                name:route,
                 params:{
                     id:'19002'
                 }

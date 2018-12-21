@@ -1,6 +1,9 @@
 <template>
     <div class="testcomponents">
           <h1>这是第一个跳转页面</h1>
+          <div class="showbox">
+              <p>用户当前选择的时间是{{selectTime}}</p>
+          </div>
          <van-button type="default" v-on:click="dateShow()">选择日期</van-button>
          <div class="datepicker">
                <van-datetime-picker
@@ -19,6 +22,7 @@
     @import './test.scss';
 </style>
 <script>
+// https://youzan.github.io/vant/#/zh-CN/area vantui框架库
 import Vue from 'vue';
 import { Button, Cell, DatetimePicker} from 'vant';
 import 'vant/lib/index.css';
@@ -34,7 +38,8 @@ export default {
             maxHour: 20,
             minDate: new Date(),
             maxDate: new Date(2019, 10, 1),
-            currentDate: new Date()
+            currentDate: new Date(),
+            selectTime:'',//用户选择的时间
         }      
     },
     mounted(){
@@ -42,7 +47,10 @@ export default {
     },
     methods:{
         dateShow(aa){
-            console.log(this.formatTime(aa),'检测一下传入参数')
+            console.log(this.formatTime(aa),'检测一下传入参数');
+            if(aa){
+                this.selectTime=this.formatTime(aa);
+            }
             this.dataShow=!this.dataShow;
         },
         formatTime(time, cFormat) {
