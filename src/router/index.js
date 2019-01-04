@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Index from '../components/indexComponents/index.vue'
 import Test from '../components/testComponents/test.vue'
 import Elementr from '../components/elementComponents/element.vue'
+import Echart from '../components/echartsComponents/echart.vue'
 
 //注册路由
 Vue.use(Router)
@@ -26,6 +27,11 @@ export default new Router({
       path:'/ele',
       name:'element',
       component:Elementr
+    },
+    {
+      path:'/echart',
+      name:'echart',
+      component:Echart
     }
   ]
 })

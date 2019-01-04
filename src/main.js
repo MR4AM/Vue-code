@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+// 全局引入echarts,不过实际开发中会考虑到echart包体积过大而按开发需要按需引入包
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts 
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
