@@ -6,6 +6,7 @@ import Index from '../components/indexComponents/index.vue'
 import Test from '../components/testComponents/test.vue'
 import Elementr from '../components/elementComponents/element.vue'
 import Echart from '../components/echartsComponents/echart.vue'
+import baidumap from '../components/baidumapComponents/baidumap.vue'
 
 //注册路由
 Vue.use(Router)
@@ -32,6 +33,11 @@ export default new Router({
       path:'/echart',
       name:'echart',
       component:Echart
+    },
+    {
+      path:'/baidumap',
+      name:'baidumap',
+      component:baidumap
     }
   ]
 })
