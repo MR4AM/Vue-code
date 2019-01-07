@@ -1,7 +1,17 @@
+@import '../../common//styles/common.scss';
 // 定义样式的命名空间
 .indexComponents{
     .title{
-        font-size: 36px;
+        font-size: Rem(42);
         color:orange;
+    }
+    .comlist{
+        font-size: Rem(36);
+        padding:Rem(30);
+        margin: Rem(30);
+        border:1px solid #ccc;
+        &:active{
+            background: #ccc;
+        }
     } 
 }

@@ -1,0 +1,37 @@
+@import '../../common/styles/common.scss';
+.modalCom{
+    position: absolute;
+    top:0;
+    background: rgba(0,0,0,.7);
+    height: 100%;
+    width: 100%;
+    .modalbox{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+        height: Rem(800);
+        background: #fff;
+        .modaltitle{
+            font-size: Rem(50);
+        }
+        .modalcontent{
+            margin-top: Rem(30);
+            height: Rem(500);
+        }
+        .modalbtn{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            button{
+                width: 45%;
+                border:0;
+                text-decoration: none;
+                padding: Rem(30);
+                background: #2196f3;
+                margin: 1%;
+            }
+        }
+    }
+}

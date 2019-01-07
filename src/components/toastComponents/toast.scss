@@ -1,0 +1,18 @@
+@import '../../common//styles/common.scss';
+.toastCom{
+    position: absolute;
+    bottom:10%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: Rem(80);
+    background: rgba(0,0,0,.9);
+    border-radius: Rem(50);
+    p{
+        height: Rem(80);
+        line-height: Rem(20);
+        text-align: center;
+        color:#fff;
+        font-size: Rem(36);
+    }
+}

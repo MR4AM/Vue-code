@@ -15,7 +15,6 @@ class utils{
         } else {
             date = new Date(time)
         }
- 
         var formatObj = {
             y: date.getFullYear(),
             m: date.getMonth() + 1,

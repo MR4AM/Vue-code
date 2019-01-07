@@ -1,5 +1,6 @@
 <template>
     <div class="baidumaoCom">
+        <h1 class="title">百度地图组件</h1>
         <baidu-map
             :center="mapCenter"
             :zoom="zoom"

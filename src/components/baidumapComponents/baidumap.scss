@@ -1,7 +1,11 @@
+@import '../../common/styles/common.scss';
 .baidumaoCom{
+  .title{
+    font-size: Rem(30);
+  }
     /* 地图容器必须设置宽和高属性 */
   .map {
     width: 100%;
-    height: 500px;
+    height: Rem(500);
   }
 }

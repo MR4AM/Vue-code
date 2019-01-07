@@ -1,8 +1,13 @@
+//30px 换算成1rem
 @function Rem($px) {
     @return $px / 30 * 1rem;
 }
-
-@import "variable";
 html {
     font-size: 62.5%;
+}
+.positioncenter{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); 
 }

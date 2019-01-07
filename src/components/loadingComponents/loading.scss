@@ -1,0 +1,54 @@
+@import '../../common//styles/common.scss';
+.loadingCom{
+    width: 100%;
+    position: absolute;
+    top:0;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    .center{
+        position: relative;
+        width: Rem(200);
+        height: Rem(200);
+        // background-color: #000;
+        .rotate{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            animation: rotation .5s linear infinite;
+            -moz-animation: rotation .5s linear infinite;
+            -webkit-animation: rotation .5s linear infinite;
+            -o-animation: rotation .5s linear infinite;
+            transform-origin:50% 50%;
+            -moz-transform-origin:50% 50%;
+            -webkit-transform-origin:50% 50%;
+            -o-transform-origin:50% 50%;
+        }
+        .circle{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: Rem(60);
+            height: Rem(60);
+            border-radius: 50%;
+            border:Rem(8) solid #fff; 
+        }
+        .loadingtxt{
+            position: absolute;
+            top:75%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            color:#fff;
+            font-size: Rem(30);
+        }
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
