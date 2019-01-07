@@ -14,14 +14,16 @@ Vue.use(BaiduMap, {
   // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
   ak: '2QUQ7bVf2yDIuFij5LKAfGzfUndbPsFN'
 })
+import store from './stores/index';
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-// 主函数实例化根节点入口
+// 主函数实例化根节点入口,注入路由和stores
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

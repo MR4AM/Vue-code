@@ -24,7 +24,8 @@ export default {
         }
     },
     mounted(){
-
+        let distance=this.$store.state;
+        console.log(distance.baidumap,'检测vuex')
     },
     methods:{
 
