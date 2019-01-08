@@ -4,6 +4,9 @@
             <h1 class="modaltitle">{{modaltitle || '弹窗标题'}}</h1>
             <div class="modalcontent">
                 {{modalcontent || '弹窗内容'}}
+                <div class="imgbox" v-show="useimg">
+                    <img :src="src" />
+                </div>
             </div>
             <div class="modalbtn">
                 <button class="cancelbtn" @click="cancel()">取消</button>
@@ -21,7 +24,7 @@ export default {
         return{
         }
     },
-    props:['modalShow','cancel','confirm','modaltitle','modalcontent'],
+    props:['modalShow','cancel','confirm','modaltitle','modalcontent','src','useimg'],
     methods:{
     },
     

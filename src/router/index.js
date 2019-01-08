@@ -7,7 +7,8 @@ import Test from '../components/testComponents/test.vue'
 import Elementr from '../components/elementComponents/element.vue'
 import Echart from '../components/echartsComponents/echart.vue'
 import baidumap from '../components/baidumapComponents/baidumap.vue'
-
+import luckdraw from '../components/luckdrawComponents/luckdraw.vue'
+import ninedraw from '../components/ninedrawComponents/ninedraw.vue'
 //注册路由
 Vue.use(Router)
 
@@ -19,11 +20,11 @@ export default new Router({
       name: 'index',
       component: Index
     },
-    {
-      path: '/index',
-      name: 'index',
-      component: Index
-    },
+    // {
+    //   path: '/index',
+    //   name: 'index',
+    //   component: Index
+    // },
     {
       path:'/test:id',
       name:'test',
@@ -43,6 +44,16 @@ export default new Router({
       path:'/baidumap',
       name:'baidumap',
       component:baidumap
+    },
+    {
+      path:'luckdraw',
+      name:'luckdraw',
+      component:luckdraw
+    },
+    {
+      path:'ninedraw',
+      name:'ninedraw',
+      component:ninedraw
     }
   ]
 })

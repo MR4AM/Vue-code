@@ -1,0 +1,49 @@
+@import '../../../common/styles/base';
+
+
+.iv-lottery {
+  width: 100%;
+  background-size: cover;
+  height:100%;
+  ul {
+    margin: 0 auto;
+    width: 24rem;
+    box-sizing: border-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0.831rem 0.768rem 0.768rem 0.768rem;
+    position: relative;
+    z-index: 1; 
+
+    li {
+      width: 100%;
+      overflow:hidden;
+      position: relative;
+    }
+
+    li div {
+      float: left;
+      width: 31%;
+      padding: torem(1.2);
+      position: relative;
+
+      &.active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background: rgba(255, 135, 46, 0.62); }
+      }
+
+    li div img{
+      width: 100%;
+      vertical-align: middle;
+     }
+
+  }
+
+}

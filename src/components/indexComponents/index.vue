@@ -39,7 +39,7 @@ export default {
     //存放常量及状态控制变量的控制data层
     data(){
         return{
-            comList:['toast组件','loading组件','modal组件'],
+            comList:['toast组件','loading组件','modal组件','抽签转盘组件','九宫格抽奖组件','echart组件','百度地图组件'],
             toastShow:false,
             toastContent:'toast提示一下哦',
             loadingShow:false,
@@ -80,9 +80,21 @@ export default {
                 case 'modal组件':
                     this.modal();
                     break;
+                case '抽签转盘组件':
+                    this.$router.push({name:'luckdraw'});
+                    break;
+                case '九宫格抽奖组件':
+                    this.$router.push({name:'ninedraw'});
+                    break;
+                case 'echart组件':
+                    this.$router.push({name:'echart'});
+                    break;
+                case '百度地图组件':
+                    this.$router.push({name:'baidumap'});
+                    break;
             }
         },
-        linkTo(route){
+        linkTo(route,needpar){
             this.$router.push({
                 name:route,
                 params:{

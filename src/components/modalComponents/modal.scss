@@ -5,13 +5,14 @@
     background: rgba(0,0,0,.7);
     height: 100%;
     width: 100%;
+    z-index: 100000000;
     .modalbox{
         position: absolute;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
         width: 80%;
-        height: Rem(800);
+        // height: Rem(800);
         background: #fff;
         .modaltitle{
             font-size: Rem(50);
@@ -19,6 +20,9 @@
         .modalcontent{
             margin-top: Rem(30);
             height: Rem(500);
+        }
+        .imgbox{
+            margin-top: Rem(50);
         }
         .modalbtn{
             width: 100%;
