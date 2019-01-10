@@ -1,0 +1,125 @@
+@import "../../../common/styles/base.scss";
+@import "../../../common/styles/common.scss";
+
+$prefixCls: '.iv-picker';
+
+%maskTop {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: Rem(120);
+    display: none;
+}
+
+
+#{$prefixCls} {
+    width: 100%;
+
+    &-scroller {
+        text-align: center;
+        position: relative;
+        z-index: 4;
+        height: Rem(280);
+        overflow: hidden;
+        width: 100%;
+
+        #{$prefixCls}-item {
+            line-height: Rem(40);
+            font-size: Rem(16);
+            display: block;
+            @include ellipsis();
+        }
+    }
+
+    &-mask-top {
+        @extend %maskTop;
+        top: 0;
+        background-image: linear-gradient(to top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        border-bottom: 1px solid $lineGray;
+    }
+
+    &-mask-bottom {
+        @extend %maskTop;
+        bottom: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5), rgba(255, 255, 255, .9));
+        border-top: 1px solid $lineGray;
+    }
+
+    &-wraper {
+        .v-cover {
+            display: none;
+        }
+
+        &.isShow .v-cover {
+            display: block;
+        }
+
+        &.isShow #{$prefixCls}-container {
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    }
+
+
+    &-container {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        height: Rem(320);
+        background: #fff;
+        transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, 100%, 0);
+        transition: transform .25s ease;
+        -webkit-transition: -webkit-transform .25s ease;
+
+        &.isShow #{$prefixCls}-container {
+            transform: translate3d(0, 0, 0);
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+
+        #{$prefixCls}-header {
+            @include flexbox();
+            border-bottom: 1px solid $lineGray;
+            height: Rem(40);
+            line-height: Rem(40);
+            color: $orange;
+
+            span {
+                @include flex(1);
+                box-sizing: border-box;
+                font-size: Rem(16 );
+
+                &#{$prefixCls}-cancle {
+                    padding-left: Rem(30);
+                    text-align: left;
+                }
+
+                &#{$prefixCls}-confirm {
+                    padding-right: Rem(30);
+                    text-align: right;
+                }
+            }
+        }
+
+
+        #{$prefixCls}-content {
+            @include flexbox();
+        }
+
+        .showMask #{$prefixCls}-mask-top,
+        .showMask #{$prefixCls}-mask-bottom {
+            display: block;
+        }
+    }
+
+
+    .isTransition {
+        transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+        -webkit-transition: all 0.5s cubic-bezier(0.29, 0.63, 0.68, 0.96);
+    }
+}

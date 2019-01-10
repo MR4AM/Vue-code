@@ -9,6 +9,9 @@ import Echart from '../components/echartsComponents/echart.vue'
 import baidumap from '../components/baidumapComponents/baidumap.vue'
 import luckdraw from '../components/luckdrawComponents/luckdraw.vue'
 import ninedraw from '../components/ninedrawComponents/ninedraw.vue'
+import addresspicker from '../components/addresspickerComponents/addresspicker.vue';
+import cube from '../components/cubeComponents/cube.vue';
+import socketio from '../components/socketioComponents/socketio.vue';
 //注册路由
 Vue.use(Router)
 
@@ -54,6 +57,21 @@ export default new Router({
       path:'ninedraw',
       name:'ninedraw',
       component:ninedraw
+    },
+    {
+      path:'addresspicker',
+      name:'addresspicker',
+      component:addresspicker
+    },
+    {
+      path:'cube',
+      name:'cube',
+      component:cube
+    },
+    {
+      path:'socketio',
+      name:'socketio',
+      component:socketio
     }
   ]
 })

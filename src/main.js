@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
+import Cube from 'cube-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // 全局引入echarts,不过实际开发中会考虑到echart包体积过大而按开发需要按需引入包
 import echarts from 'echarts'
@@ -16,8 +17,12 @@ Vue.use(BaiduMap, {
 })
 import store from './stores/index';
 Vue.use(ElementUI);
-Vue.config.productionTip = false
-
+Vue.use(Cube);
+Vue.config.productionTip = false;
+//建立socket
+import VueSocketio from 'vue-socket.io';
+// Vue.use(VueSocketio, 'http://socketserver.com:1923');
+// import './common/styles/index.scss';
 /* eslint-disable no-new */
 // 主函数实例化根节点入口,注入路由和stores
 new Vue({

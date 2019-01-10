@@ -1,0 +1,139 @@
+<template>
+    <div :class="prefixCls">
+        <div :class="prefixCls+'-scroller'" @touchstart.stop.prevent="touchstart" @touchmove.stop.prevent="touchmove" @touchend.stop.prevent="touchend">
+            <div :class="prefixCls+'-mask-top'"></div>
+            <div :class="prefixCls+'-mask-bottom'"></div>
+            <ul :class="[{isTransition:isTransition}]" ref="picker">
+                <li :class="prefixCls+'-item'" v-for="item in dataArr">{{item}}</li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+    @import './picker.scss';
+</style>
+
+
+<script type="text/javascript">
+    // import './picker.scss';
+
+    export default {
+        name: 'picker',
+        data() {
+            return {
+                isTransition: true,
+                startY: null,
+                startTime: null,
+                currentY: 0,
+                //滚动后的index值 
+                index: 0,
+                //选中的值
+                selected: 0,
+                prefixCls: 'iv-picker'
+            };
+        },
+        props: {
+            nowIndex: {
+                type: Number,
+                default: 0
+            },
+            dataArr: {
+                type: Array,
+                default() {
+                    return [];
+                }
+            }
+        },
+        watch: {
+            dataArr() {
+                this.isTransition = false;
+                this.index = 0;
+                this.currentY = 3 * this.itemH;
+                this.selected = 0;
+
+                var offset = 3 * this.itemH;
+                this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`;
+            }
+        },
+        mounted() {
+            this.picker = this.$refs.picker;
+            this.itemH = this.$refs.picker.querySelector('li').offsetHeight;
+
+            //  be compatible with ios8 ， there is still no solution which i can find
+            let version = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+            version = version ? parseInt(version[1], 10) : null;
+            if (version && version <= 8) {
+                this.setTransform = offset => { this.picker.style.webkitTransform = `translate(0, ${offset})`; };
+            } else {
+                this.setTransform = offset => { this.picker.style.webkitTransform = `translate3d(0, ${offset}px ,0)`; };
+            }
+
+            this.init();
+        },
+        methods: {
+            touchstart(e) {
+                e = e.changedTouches[0];
+                this.isTransition = false;
+                this.startY = e.pageY;
+                this.startTime = new Date().getTime();
+            },
+            touchmove(e) {
+                let event = e.changedTouches[0];
+
+                let offset = this.currentY + event.pageY - this.startY;
+
+                this.setTransform(offset);
+
+            },
+            touchend(e) {
+
+                //获取li的个数
+                let length = this.picker.querySelectorAll('li').length;
+
+                let event = e.changedTouches[0];
+
+                // slow
+                this.isTransition = true;
+                let time = (new Date().getTime() - this.startTime);
+                time = time > 200 ? 10000 : time;
+
+                let distant = event.pageY - this.startY;
+
+                let offset = this.currentY + distant + 290 * (distant / time);
+
+                offset = Math.round(offset / this.itemH) * this.itemH;
+
+                if (offset > this.itemH * 3) {
+                    offset = this.itemH * 3;
+                }
+
+                if (offset < -this.itemH * (length - 4)) {
+                    offset = -this.itemH * (length - 4);
+                }
+
+                this.currentY = offset;
+
+                //be compatible with the low vision android
+                setTimeout(() => { this.setTransform(offset); }, 0);
+
+                // change index after rolling
+                let index = offset / this.itemH - 3;
+
+                this.index = Math.abs(index);
+                setTimeout(() => { this.$emit('change', this.index); }, 500);
+
+            },
+            init() {
+                this.isTransition = false;
+                this.index = this.nowIndex;
+                this.currentY = -(this.nowIndex - 3) * this.itemH;
+                var offset = -(this.nowIndex - 3) * this.itemH;
+                this.setTransform(offset);
+
+            },
+
+        }
+    };
+
+</script>

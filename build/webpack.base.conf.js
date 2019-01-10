@@ -3,7 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -27,8 +27,12 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'cube-ui': 'cube-ui/lib'
     }
   },
+  plugins:[
+    new TransformModulesPlugin()
+  ],
   module: {
     rules: [
       {
@@ -67,8 +71,8 @@ module.exports = {
       },
       //安装sass-loader、node-sass，并配置scss的编译规则
       {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        test: /\.(scss|sass)$/,
+        loaders: ['style', 'css', 'sass','scss']
       }
     ]
   },
