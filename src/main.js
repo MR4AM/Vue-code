@@ -19,9 +19,11 @@ import store from './stores/index';
 Vue.use(ElementUI);
 Vue.use(Cube);
 Vue.config.productionTip = false;
-//建立socket
+//vue内建立socket
 import VueSocketio from 'vue-socket.io';
-// Vue.use(VueSocketio, 'http://socketserver.com:1923');
+import socketio from 'socket.io-client';
+let hostapi='http://localhost:8082';
+Vue.use(VueSocketio,socketio(hostapi));
 // import './common/styles/index.scss';
 /* eslint-disable no-new */
 // 主函数实例化根节点入口,注入路由和stores

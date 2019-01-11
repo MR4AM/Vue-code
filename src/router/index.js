@@ -11,7 +11,7 @@ import luckdraw from '../components/luckdrawComponents/luckdraw.vue'
 import ninedraw from '../components/ninedrawComponents/ninedraw.vue'
 import addresspicker from '../components/addresspickerComponents/addresspicker.vue';
 import cube from '../components/cubeComponents/cube.vue';
-import socketio from '../components/socketioComponents/socketio.vue';
+import socketio from '../components/socketioComponents/vuesocket.vue';
 //注册路由
 Vue.use(Router)
 

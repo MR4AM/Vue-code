@@ -1,6 +1,6 @@
 <template>
     <div class="chatRoom">
-        <h1 class="chattitle">群聊(20)</h1>
+        <h1 class="chattitle">群聊(23220)</h1>
         <div class="chatlist">
             <ul>
                <div v-for="(item,idx) in chatlist" class="item">
