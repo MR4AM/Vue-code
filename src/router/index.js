@@ -12,6 +12,7 @@ import ninedraw from '../components/ninedrawComponents/ninedraw.vue'
 import addresspicker from '../components/addresspickerComponents/addresspicker.vue';
 import cube from '../components/cubeComponents/cube.vue';
 import socketio from '../components/socketioComponents/vuesocket.vue';
+import lazyload from '../components/lazyloadComponents/lazyload.vue';
 //注册路由
 Vue.use(Router)
 
@@ -72,6 +73,11 @@ export default new Router({
       path:'socketio',
       name:'socketio',
       component:socketio
+    },
+    {
+      path:'lazyload',
+      name:'lazyload',
+      component:lazyload
     }
   ]
 })

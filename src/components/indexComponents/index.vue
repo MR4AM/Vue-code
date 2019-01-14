@@ -42,7 +42,7 @@ export default {
     //存放常量及状态控制变量的控制data层
     data(){
         return{
-            comList:['toast组件','loading组件','modal组件','抽签转盘组件','九宫格抽奖组件','echart组件','百度地图组件'],
+            comList:['toast组件','loading组件','modal组件','抽签转盘组件','九宫格抽奖组件','echart组件','百度地图组件','图片懒加载组件'],
             toastShow:false,
             toastContent:'toast提示一下哦',
             loadingShow:false,
@@ -94,6 +94,9 @@ export default {
                     break;
                 case '百度地图组件':
                     this.$router.push({name:'baidumap'});
+                    break;
+                case '图片懒加载组件':
+                    this.$router.push({name:'lazyload'});
                     break;
                 case 'addresspicker组件':
                     this.$router.push({name:'addresspicker'});

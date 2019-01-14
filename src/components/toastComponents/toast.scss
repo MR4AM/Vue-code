@@ -9,8 +9,10 @@
     background: rgba(0,0,0,.9);
     border-radius: Rem(50);
     p{
-        height: Rem(80);
-        line-height: Rem(20);
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
         text-align: center;
         color:#fff;
         font-size: Rem(36);

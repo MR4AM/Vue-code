@@ -7,6 +7,7 @@
     width: 100%;
     z-index: 100000000;
     .modalbox{
+        padding: Rem(20);
         position: absolute;
         top:50%;
         left:50%;
@@ -25,11 +26,11 @@
             margin-top: Rem(50);
         }
         .modalbtn{
-            width: 100%;
+            width: 90%;
             position: absolute;
             bottom: 0;
             button{
-                width: 45%;
+                width: Rem(150);
                 border:0;
                 text-decoration: none;
                 padding: Rem(30);

@@ -6,6 +6,14 @@ import router from './router'
 import ElementUI from 'element-ui';
 import Cube from 'cube-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import VueLazyload from 'vue-lazyload';
+//设置预加载及加载失败的默认底图
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: '../../assets/static/failload.jpg',
+  loading: 'https://img.shuixindk.cn/loan-index-new/recommandlogo2.gif',
+  attempt: 1
+})
 // 全局引入echarts,不过实际开发中会考虑到echart包体积过大而按开发需要按需引入包
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts 
@@ -20,10 +28,10 @@ Vue.use(ElementUI);
 Vue.use(Cube);
 Vue.config.productionTip = false;
 //vue内建立socket
-import VueSocketio from 'vue-socket.io';
-import socketio from 'socket.io-client';
-let hostapi='http://localhost:8082';
-Vue.use(VueSocketio,socketio(hostapi));
+// import VueSocketio from 'vue-socket.io';
+// import socketio from 'socket.io-client';
+// let hostapi='http://localhost:8082';
+// Vue.use(VueSocketio,socketio(hostapi));
 // import './common/styles/index.scss';
 /* eslint-disable no-new */
 // 主函数实例化根节点入口,注入路由和stores
