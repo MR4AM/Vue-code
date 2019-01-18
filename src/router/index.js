@@ -13,6 +13,7 @@ import addresspicker from '../components/addresspickerComponents/addresspicker.v
 import cube from '../components/cubeComponents/cube.vue';
 import socketio from '../components/socketioComponents/vuesocket.vue';
 import lazyload from '../components/lazyloadComponents/lazyload.vue';
+import swiper from '../components/swiperComponents/swiper.vue';
 //注册路由
 Vue.use(Router)
 
@@ -78,6 +79,11 @@ export default new Router({
       path:'lazyload',
       name:'lazyload',
       component:lazyload
+    },
+    {
+      path:'swiper',
+      name:'swiper',
+      component:swiper
     }
   ]
 })

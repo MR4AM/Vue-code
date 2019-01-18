@@ -3,9 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui';
+//引入滴滴ui库
 import Cube from 'cube-ui';
+Vue.use(Cube);
+Vue.config.productionTip = false;
+//引入饿了么后台ui库
+import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+//引入lazyload组件
 import VueLazyload from 'vue-lazyload';
 //设置预加载及加载失败的默认底图
 Vue.use(VueLazyload, {
@@ -13,7 +19,10 @@ Vue.use(VueLazyload, {
   error: '../../assets/static/failload.jpg',
   loading: 'https://img.shuixindk.cn/loan-index-new/recommandlogo2.gif',
   attempt: 1
-})
+});
+//引入swiper
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css';
 // 全局引入echarts,不过实际开发中会考虑到echart包体积过大而按开发需要按需引入包
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts 
@@ -23,10 +32,8 @@ Vue.use(BaiduMap, {
   // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
   ak: '2QUQ7bVf2yDIuFij5LKAfGzfUndbPsFN'
 })
+//引入vuex
 import store from './stores/index';
-Vue.use(ElementUI);
-Vue.use(Cube);
-Vue.config.productionTip = false;
 //vue内建立socket
 // import VueSocketio from 'vue-socket.io';
 // import socketio from 'socket.io-client';
