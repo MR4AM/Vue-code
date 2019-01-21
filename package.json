@@ -21,6 +21,7 @@
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.1",
     "vue-socket.io": "^3.0.4",
+    "vue-video-player": "^5.0.2",
     "vuex": "^3.0.1",
     "webpack-transform-modules-plugin": "^0.4.3"
   },

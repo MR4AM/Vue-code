@@ -14,6 +14,7 @@ import cube from '../components/cubeComponents/cube.vue';
 import socketio from '../components/socketioComponents/vuesocket.vue';
 import lazyload from '../components/lazyloadComponents/lazyload.vue';
 import swiper from '../components/swiperComponents/swiper.vue';
+import video from '../components/videoComponents/video.vue';
 //注册路由
 Vue.use(Router)
 
@@ -84,6 +85,11 @@ export default new Router({
       path:'swiper',
       name:'swiper',
       component:swiper
+    },
+    {
+      path:'video',
+      name:'video',
+      component:video
     }
   ]
 })

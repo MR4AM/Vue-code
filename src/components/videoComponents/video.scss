@@ -1,0 +1,12 @@
+@import '../../common/styles/common.scss';
+.videoCom{
+    .video-player-box{
+        .vjs_video_547-dimensions{
+            height: Rem(300);
+            width: 100%;
+        }
+        .video-js{
+            width: 100%;
+        }
+    }
+}

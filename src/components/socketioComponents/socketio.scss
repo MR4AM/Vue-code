@@ -1,84 +1,96 @@
-
 @import '../../common/styles/common.scss';
-.chatRoom{
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   overflow-x: hidden;
-   .chattitle{
-        width: 100%;
-        height: Rem(100);
-        background: skyblue;
-        line-height: Rem(100);
-        text-align: left;
-        padding: 0 Rem(30);
-        position: fixed;
-        top:0;
-   }
-   .chatlist{
+
+.chatRoom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+
+  .chattitle {
+    width: 100%;
+    height: Rem(100);
+    background: skyblue;
+    line-height: Rem(100);
+    text-align: left;
+    padding: 0 Rem(30);
+    position: fixed;
+    top: 0;
+  }
+
+  .chatlist {
     //    width: 100%;
     //    position: absolute;
-       margin-top:Rem(120);
-       overflow-y: auto;
-       padding-bottom: Rem(100);
-       ul{
-           width: 100%;
-           overflow: hidden;
-           .item{
-               display: block;
-               margin:Rem(30);
-               overflow: hidden;
-               .content{
-                    white-space: inherit;
-                    word-break: break-all;
-               }
-               &:nth-child(odd){
-                   .content{
-                        float: left;
-                        text-align: left;
-                        padding: Rem(20);
-                        background: skyblue;
-                   }
-               }
-               &:nth-child(1){
-                    .content{
-                        float: left;
-                        text-align: left;
-                        padding: Rem(20);
-                        background: greenyellow;
-                    }
-                }
-               &:nth-child(even){
-                   .content{
-                        float: right;
-                        text-align: right;
-                        padding: Rem(20);
-                        background: orange;
-                    }
-               }
-           }
-       }
-   }
-   .chatbottom{
+    margin-top: Rem(120);
+    overflow-y: auto;
+    padding-bottom: Rem(100);
+
+    ul {
+      width: 100%;
+      overflow: hidden;
+
+      .item {
+        display: block;
+        margin: Rem(30);
+        overflow: hidden;
+
+        .content {
+          white-space: inherit;
+          word-break: break-all;
+        }
+
+        &:nth-child(odd) {
+          .content {
+            float: left;
+            text-align: left;
+            padding: Rem(20);
+            background: skyblue;
+          }
+        }
+
+        &:nth-child(1) {
+          .content {
+            float: left;
+            text-align: left;
+            padding: Rem(20);
+            background: greenyellow;
+          }
+        }
+
+        &:nth-child(even) {
+          .content {
+            float: right;
+            text-align: right;
+            padding: Rem(20);
+            background: orange;
+          }
+        }
+      }
+    }
+  }
+
+  .chatbottom {
     //    width: 100%;
-       position: fixed;
-       bottom:0;
-       padding: Rem(10);
-       background-color: #fff;
-       .inputbox{
-           width:Rem(400);
-           height: Rem(50);
-           border: 1px solid #ccc;
-       }
-       .more{
-           padding: Rem(15);
-           height: Rem(50);
-           border:none;
-       }
-       .send{
-           padding: Rem(15);
-           height: Rem(50);
-           border:none;
-       }
-   }
+    position: fixed;
+    bottom: 0;
+    padding: Rem(10);
+    background-color: #fff;
+
+    .inputbox {
+      width: Rem(400);
+      height: Rem(50);
+      border: 1px solid #ccc;
+    }
+
+    .more {
+      padding: Rem(15);
+      height: Rem(50);
+      border: none;
+    }
+
+    .send {
+      padding: Rem(15);
+      height: Rem(50);
+      border: none;
+    }
+  }
 }

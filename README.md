@@ -2,20 +2,8 @@
 
 > 利用vue-cli官方脚手架搭建的组件化市场项目
 
-## Build Setup
+## 关于Vue的优势及与angular、react的对比
+https://blog.csdn.net/qq_39985511/article/details/78992426
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 关于Vue的网上使用及开发案列
+https://blog.csdn.net/weixin_42262436/article/details/80724653
