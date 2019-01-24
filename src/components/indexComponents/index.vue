@@ -46,7 +46,8 @@ export default {
         "echart组件",
         "百度地图组件",
         "图片懒加载组件",
-        "video视频组件案例"
+        "video视频组件案例",
+        "网页调起微信jssdk实例"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -111,6 +112,9 @@ export default {
           break;
         case "video视频组件案例":
           this.$router.push({ name: "video" });
+          break;
+        case "网页调起微信jssdk实例":
+          this.$router.push({name:"wxjsapi"});
           break;
       }
     },

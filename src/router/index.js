@@ -15,6 +15,7 @@ import socketio from '../components/socketioComponents/vuesocket.vue';
 import lazyload from '../components/lazyloadComponents/lazyload.vue';
 import swiper from '../components/swiperComponents/swiper.vue';
 import video from '../components/videoComponents/video.vue';
+import wxjsapi from '../components/wxjsapiComponents/wxjsapi.vue';
 //注册路由
 Vue.use(Router)
 
@@ -90,6 +91,11 @@ export default new Router({
       path:'video',
       name:'video',
       component:video
+    },
+    {
+      path:'wxjsapi',
+      name:'wxjsapi',
+      component:wxjsapi
     }
   ]
 })

@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cube-ui": "^1.12.8",
     "echarts": "^4.2.0-rc.2",
     "node-sass": "^4.11.0",
@@ -17,6 +18,7 @@
     "socket.io-client": "^2.2.0",
     "uws": "^99.0.0",
     "vue": "^2.5.2",
+    "vue-axios": "^2.1.4",
     "vue-baidu-map": "^0.21.16",
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.1",

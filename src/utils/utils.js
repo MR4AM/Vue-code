@@ -35,4 +35,4 @@ class utils{
         return time_str
     }
 }
-module.exports= utils;
+export default utils;
