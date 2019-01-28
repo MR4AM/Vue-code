@@ -17,6 +17,7 @@ import swiper from '../components/swiperComponents/swiper.vue';
 import video from '../components/videoComponents/video.vue';
 import wxjsapi from '../components/wxjsapiComponents/wxjsapi.vue';
 import city from '../components/cityComponents/city.vue';
+import masonry from '../components/masonryComponents/masonry.vue';
 //注册路由
 Vue.use(Router)
 
@@ -102,6 +103,11 @@ export default new Router({
       path:'/city',
       name:'city',
       component:city
+    },
+    {
+      path:'/masonry',
+      name:'masonry',
+      component:masonry
     }
   ]
 })

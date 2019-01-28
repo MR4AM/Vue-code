@@ -48,7 +48,8 @@ export default {
         "图片懒加载组件",
         "video视频组件案例",
         "网页调起微信jssdk实例",
-        "城市定位及选择组件"
+        "城市定位及选择组件",
+        "瀑布流列表"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -119,6 +120,9 @@ export default {
           break;
         case "城市定位及选择组件":
           this.$router.push({name:"city"});
+          break;
+        case "瀑布流列表":
+          this.$router.push({name:'masonry'});
           break;
       }
     },

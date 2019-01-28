@@ -17,7 +17,7 @@ import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: '../../assets/static/failload.jpg',
-  loading: 'https://img.shuixindk.cn/loan-index-new/recommandlogo2.gif',
+  loading: require('./assets/loading.gif'),
   attempt: 1
 });
 //引入swiper

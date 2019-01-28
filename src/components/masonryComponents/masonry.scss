@@ -1,0 +1,33 @@
+@import '../../common//styles/common.scss';
+.masonryCom{
+    .maindo{
+        width:100%;
+        column-gap:10px;
+        column-count: 2;
+        margin: 0 auto; 
+        .item{
+            // height: Rem(random($limit: 800));
+            &:nth-child(odd){
+                background-color: orange;
+                height: Rem(400);
+
+            }
+            &:nth-child(even){
+                background-color:skyblue;
+                height: Rem(500);
+            }
+            box-sizing: border-box;
+            -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+            page-break-inside: avoid; /* Firefox */
+            break-inside: avoid; /* IE 10+ */
+            padding: 10px;
+            counter-increment: item-counter;
+            // height:100%;
+            overflow: auto;
+            border:1px solid #ccc; 
+            img{
+                height: Rem(200);
+            }
+        }
+    }
+}
