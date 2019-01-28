@@ -1,0 +1,247 @@
+// @import "bourbon";
+
+// Basic Reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #222;
+}
+
+// Colour Vars
+
+$c_0: #f79fc5;
+$c_1: #ff6d51;
+$c_2: #f3b140;
+$c_3: #f9d53a;
+$c_4: #87b1d3;
+$c_5: #5bd9c3;
+$c_6: #7861be;
+$c_7: #a9c688;
+
+$color-list: $c_0, $c_1, $c_2, $c_3, $c_4, $c_5, $c_6, $c_7;
+
+// Container
+
+.container {
+//   @include display(flex);
+  position: relative;
+  z-index: 100;
+//   @include justify-content(center);
+//   @include align-items(center);
+  height: 100%;
+  height: 100vh;
+}
+
+// Tree
+
+.tree {
+  
+  &__row {
+    // @include display(flex);
+    // @include justify-content(center);
+    // @include align-items(center);
+  }
+  
+  &__node {
+    z-index: 100;
+    width: 0;
+    height: 0;
+    margin: 0 -10px;
+    border-style: solid;
+    @include transition(transform 0.8s ease);
+    @include transform(rotateY(0deg) scale(1.01));
+    will-change: transform;
+    @include animation-name(sparkle);
+    @include animation-timing-function(ease);
+    @include animation-duration(1s);
+    @include animation-iteration-count(infinite);
+    
+    &:hover {
+      @include transform(rotateY(180deg) scale(0.99));
+    }
+    
+    &:nth-of-type(odd) {
+      border-width: 0 20px 34.6px 20px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: $c_1;
+      border-left-color: transparent !important;
+    }
+    
+    &:nth-of-type(even) {
+      border-width: 34.6px 20px 0 20px;
+      border-top-color: $c_3;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      border-left-color: transparent !important;
+    }
+    
+    // Colour shift
+
+    @each $colour in $color-list {
+
+      $i: index($color-list, $colour);
+      $n: random(7);
+      
+      &:nth-of-type(#{$i}n+#{$n}) {
+        border-color: $colour;
+      }
+      
+    }
+    
+    // Load random animation
+    
+    @each $colour in $color-list {
+      $i: index($color-list, $colour);
+      $n: random(9);
+      $a: random(1500) + 1000;
+      
+      &:nth-of-type(#{$i}n+#{$n}) {
+        @include animation-duration(#{$a}ms);
+      }
+      
+    }
+
+  }
+ 
+}
+
+// Snow
+
+.snow {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  overflow: hidden;
+  
+  &__flake {
+    position: absolute;
+    top: -300px;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 300px 1200px;
+    background-position: top left;
+    background-image: url(https://andrew-hawkes-media.s3.amazonaws.com/codepen/snow/snow-flake-1.png);
+    @include animation-name(snowflake);
+    @include animation-timing-function(linear);
+    @include animation-duration(10s);
+    @include animation-iteration-count(infinite);
+    
+    // Flake random
+
+    @for $i from 1 through 40 {
+      $left: (2.5% * $i);
+      $a: random(3000) + 1000;
+
+      &:nth-of-type(#{$i}n) {
+        left: $left;
+        @include animation-duration(#{$a}ms);
+      }
+
+    }
+    
+    &:nth-of-type(2n) {
+      background-image: url(https://andrew-hawkes-media.s3.amazonaws.com/codepen/snow/snow-flake-2.png);
+    }
+
+    &:nth-of-type(3n) {
+      background-image: url(https://andrew-hawkes-media.s3.amazonaws.com/codepen/snow/snow-flake-3.png);
+    }
+
+    &:nth-of-type(4n) {
+      background-image: url(https://andrew-hawkes-media.s3.amazonaws.com/codepen/snow/snow-flake-4.png);
+    }
+    
+  }
+  
+}
+
+
+// Message
+
+.message {
+  display: block;
+  position: fixed;
+  z-index: 500;
+  right: 20px;
+  bottom: 20px;
+  width: 280px;
+  padding: 20px;
+  background: rgba(255,255,255,0.4);
+  
+  &__text {
+    margin: 0 0 14px 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #fff;
+
+    &:last-of-type {
+      margin: 0;
+    }
+    
+    a {
+      color: $c_2;
+      text-decoration: none;
+      @include transition(color 0.25s ease-in-out);
+      
+      &:hover,
+      &:focus {
+        color: lighten($c_2, 20%); 
+      }
+      
+    }
+  }
+  
+}
+
+
+// Animations
+
+@include keyframes(sparkle) {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(snowflake) {
+  0% {
+    opacity: 0;
+    @include transform(translate3d(0,0,0));
+  }
+  40% {
+    opacity: 1;
+  }
+  
+  80% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+    @include transform(translate3d(60%,120%,0));
+  }
+
+}

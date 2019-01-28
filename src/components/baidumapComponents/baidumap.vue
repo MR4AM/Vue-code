@@ -10,6 +10,7 @@
         </baidu-map>
         <loading
             :loadingShow="loadingShow"
+            :loadingType="3"
         />
     </div>
 </template>

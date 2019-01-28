@@ -18,6 +18,7 @@ import video from '../components/videoComponents/video.vue';
 import wxjsapi from '../components/wxjsapiComponents/wxjsapi.vue';
 import city from '../components/cityComponents/city.vue';
 import masonry from '../components/masonryComponents/masonry.vue';
+import chrismas from '../components/christmasComponents/christmas.vue';
 //注册路由
 Vue.use(Router)
 
@@ -108,6 +109,11 @@ export default new Router({
       path:'/masonry',
       name:'masonry',
       component:masonry
+    },
+    {
+      path:'/christmas',
+      name:'christmas',
+      component:chrismas
     }
   ]
 })

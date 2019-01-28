@@ -19,3 +19,7 @@ https://blog.csdn.net/weixin_42262436/article/details/80724653
 - 2.购买内网穿透服务，将域名IP地址指向本机的公网ip地址
 - 3.配置内网映射，获取本地以太网ipv4的物理地址，配置对应的本机服务端口
 - 4.将远程访问映射到对应的局域网服务
+
+## sass的进阶使用
+- > sass安装和使用 https://www.cnblogs.com/bettyling/p/6070734.html
+> ruby下载官网 https://rubyinstaller.org/downloads/
