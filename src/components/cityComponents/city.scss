@@ -1,0 +1,160 @@
+@import '../../common//styles/common.scss';
+.h5city{
+    background: #efefef;
+    .city-wap{
+        color: #3b4f62;
+        
+        .clearfix{
+          &:after{
+            content: '';
+            display: block;
+            clear: both;
+          }
+        }
+        p{
+          background: #fff;
+          margin-bottom: Rem(10);
+          padding: Rem(20) Rem(12);
+        }
+        .search{
+          position: fixed;
+          top: 0;
+          box-shadow: 0 1px 3px 0 rgba(59,79,98,0.1);
+          width: 100%;
+          height: Rem(100);
+          input{
+            line-height: Rem(100);
+            width: 100%;
+            border: none;
+            box-shadow: none;
+            padding: 0 Rem(10);
+            &:focus { 
+              outline: none; 
+            } 
+          }
+        }
+        .city-list{
+            margin-top: Rem(100);
+          .block-60{
+            // height: Rem(60);
+          }
+          ul{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 Rem(10);
+            li{
+              flex:0.33;
+              list-style: none;
+            //   display: inline-block;
+              margin-right: Rem(10);
+              width: 31%;
+              min-width: 30%;
+              max-width: 31%;
+              margin-bottom: Rem(8);
+              line-height: Rem(35);
+              text-align: center;
+              color: #333;
+              border-radius: Rem(3);
+              background: #fff;
+              font-size: Rem(30);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding: Rem(20) Rem(2);
+              &:active{
+                  background: #efefef;
+              }
+            }
+          }
+        }
+        .filter{
+          position: fixed;
+          right: Rem(3);
+          top: Rem(90);
+          font-size: Rem(30);
+          div{
+            margin-top: Rem(15);
+            text-align: center;
+          }
+        }
+        .active-key{
+          position: fixed;
+          width: Rem(150);
+          height: Rem(150);
+          line-height: Rem(150);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 100;
+          background: orange;
+          color: #fff;
+          border-radius: 100%;
+          text-align: center;
+          font-size: Rem(40);
+        }
+      }
+      .city{
+        position:relative;
+        .city-components{
+          position: absolute;
+          width: Rem(500);
+          box-shadow: 0 0 Rem(4) 0 rgba(117,117,117,0.5);
+          border-radius: Rem(2);
+          padding: Rem(20) Rem(21);
+          .clearfix{
+            &:after{
+              content: '';
+              display: block;
+              clear: both;
+            }
+          }
+          li{
+            list-style: none;
+          }
+          ul{
+            padding: 0;
+            margin: 0;
+          }
+          .filter-tabar{
+            border-bottom: 1px solid #d7d7d7;
+            cursor: pointer;
+            li{
+              text-align: center;
+              padding: 0 Rem(14);
+              float: left;
+              padding-bottom: Rem(14);
+              font-size: Rem(30);
+              margin: 0 Rem(8);
+              margin-bottom: -1px;
+              position: relative;
+              &.active{
+                border-bottom: 1px solid #ff7362;
+              }
+            }
+          }
+          .city-content{
+            max-height: Rem(500);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: Rem(10) Rem(13) 0 Rem(13);
+            label{
+              display: block;
+              margin-bottom: Rem(5) !important;
+              font-size: Rem(30) !important;
+              margin-left: 0 !important;
+              color: #5f5f5f !important;
+              margin-top: Rem(5);
+            }
+            li{
+              padding: Rem(6) 0 Rem(6);
+              float: left;
+              text-align: left;
+              font-size: Rem(14);
+              min-width: Rem(56);
+              margin-right: Rem(24);
+              cursor: pointer;
+            }
+          }
+        }
+      }
+}

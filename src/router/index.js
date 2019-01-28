@@ -16,6 +16,7 @@ import lazyload from '../components/lazyloadComponents/lazyload.vue';
 import swiper from '../components/swiperComponents/swiper.vue';
 import video from '../components/videoComponents/video.vue';
 import wxjsapi from '../components/wxjsapiComponents/wxjsapi.vue';
+import city from '../components/cityComponents/city.vue';
 //注册路由
 Vue.use(Router)
 
@@ -53,22 +54,22 @@ export default new Router({
       component:baidumap
     },
     {
-      path:'luckdraw',
+      path:'/luckdraw',
       name:'luckdraw',
       component:luckdraw
     },
     {
-      path:'ninedraw',
+      path:'/ninedraw',
       name:'ninedraw',
       component:ninedraw
     },
     {
-      path:'addresspicker',
+      path:'/addresspicker',
       name:'addresspicker',
       component:addresspicker
     },
     {
-      path:'cube',
+      path:'/cube',
       name:'cube',
       component:cube
     },
@@ -78,24 +79,29 @@ export default new Router({
       component:socketio
     },
     {
-      path:'lazyload',
+      path:'/lazyload',
       name:'lazyload',
       component:lazyload
     },
     {
-      path:'swiper',
+      path:'/swiper',
       name:'swiper',
       component:swiper
     },
     {
-      path:'video',
+      path:'/video',
       name:'video',
       component:video
     },
     {
-      path:'wxjsapi',
+      path:'/wxjsapi',
       name:'wxjsapi',
       component:wxjsapi
+    },
+    {
+      path:'/city',
+      name:'city',
+      component:city
     }
   ]
 })
