@@ -1,0 +1,17 @@
+@import '../../common//styles/common.scss';
+
+.h5shakeCom{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    // position: relative;
+    overflow: hidden;
+    .bgimg{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+}

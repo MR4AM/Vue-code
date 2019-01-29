@@ -49,7 +49,8 @@ export default {
         "video视频组件案例",
         "网页调起微信jssdk实例",
         "城市定位及选择组件",
-        "瀑布流列表"
+        "瀑布流列表",
+        "h5实现摇一摇"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -123,6 +124,9 @@ export default {
           break;
         case "瀑布流列表":
           this.$router.push({name:'masonry'});
+          break;
+        case "h5实现摇一摇":
+          this.$router.push({name:"h5shake"});
           break;
       }
     },

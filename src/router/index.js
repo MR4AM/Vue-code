@@ -19,6 +19,7 @@ import wxjsapi from '../components/wxjsapiComponents/wxjsapi.vue';
 import city from '../components/cityComponents/city.vue';
 import masonry from '../components/masonryComponents/masonry.vue';
 import chrismas from '../components/christmasComponents/christmas.vue';
+import h5shake from '../components/h5shakeComponents/h5shake.vue';
 //注册路由
 Vue.use(Router)
 
@@ -114,6 +115,11 @@ export default new Router({
       path:'/christmas',
       name:'christmas',
       component:chrismas
+    },
+    {
+      path:'/h5shake',
+      name:'h5shake',
+      component:h5shake
     }
   ]
 })
