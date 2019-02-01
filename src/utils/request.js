@@ -5,7 +5,8 @@ import VueAxios from 'vue-axios';
 Vue.use(VueAxios, axios);
 
 //定义请求服务器公共域及服务名称
-const publicUrl='http://23w4962t28.imwork.net:44586';
+// const publicUrl='http://23w4962t28.imwork.net:44586';
+const publicUrl =`http://127.0.0.1:8360/`;
 let ajax={
       request(methods,url,questdata){
         //将接口url进行拼接

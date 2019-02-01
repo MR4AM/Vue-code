@@ -50,7 +50,8 @@ export default {
         "网页调起微信jssdk实例",
         "城市定位及选择组件",
         "瀑布流列表",
-        "h5实现摇一摇"
+        "h5实现摇一摇",
+        "图片上传组件"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -127,6 +128,9 @@ export default {
           break;
         case "h5实现摇一摇":
           this.$router.push({name:"h5shake"});
+          break;
+        case "图片上传组件":
+          this.$router.push({name:'upload'});
           break;
       }
     },

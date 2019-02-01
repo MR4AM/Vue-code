@@ -20,6 +20,7 @@ import city from '../components/cityComponents/city.vue';
 import masonry from '../components/masonryComponents/masonry.vue';
 import chrismas from '../components/christmasComponents/christmas.vue';
 import h5shake from '../components/h5shakeComponents/h5shake.vue';
+import upload from '../components/uploadComponents/upload.vue';
 //注册路由
 Vue.use(Router)
 
@@ -120,6 +121,11 @@ export default new Router({
       path:'/h5shake',
       name:'h5shake',
       component:h5shake
+    },
+    {
+      path:'/upload',
+      name:'upload',
+      component:upload
     }
   ]
 })

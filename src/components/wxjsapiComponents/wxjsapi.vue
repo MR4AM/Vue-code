@@ -17,23 +17,24 @@ export default {
         }
     },
     mounted(){
-        jafetch.request('get','/wxconfig',{}).then((res)=>{
-            console.log(wxjsbridge,'opopop');
-            let result=res.data.data;
-            wxjsbridge.wxconfig({
-                debug:true,
-                appId:result.appId,
-                noncestr:result.noncestr,
-                signature:result.signature,
-                timestamp:result.timestamp,
-                jsApiList:['chooseImage','previewImage','uploadImage']
-            })
-            console.log(res,'ppppp')     
-        });
+        // jafetch.request('get','/wxconfig',{}).then((res)=>{
+        //     console.log(wxjsbridge,'opopop');
+        //     let result=res.data.data;
+        //     wxjsbridge.wxconfig({
+        //         debug:true,
+        //         appId:result.appId,
+        //         noncestr:result.noncestr,
+        //         signature:result.signature,
+        //         timestamp:result.timestamp,
+        //         jsApiList:['chooseImage','previewImage','uploadImage']
+        //     })
+        //     console.log(res,'ppppp')     
+        // });
     },
     methods:{
+        //wxservice/wxjssdkconfig/wxpublictoken 获取token
         request(){
-            jafetch.request('get','/wxconfig',{}).then((res)=>{
+            jafetch.request('get','wxservice/wxjssdkconfig/wxpublictoken',{}).then((res)=>{
                 console.log(res,'ppppp')     
             });     
         },
