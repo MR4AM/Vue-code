@@ -11,6 +11,8 @@ Vue.config.productionTip = false;
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
+// 饿了么移动端库
+import 'mint-ui/lib/style.css';
 //引入lazyload组件
 import VueLazyload from 'vue-lazyload';
 //设置预加载及加载失败的默认底图

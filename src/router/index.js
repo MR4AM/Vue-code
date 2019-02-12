@@ -21,6 +21,7 @@ import masonry from '../components/masonryComponents/masonry.vue';
 import chrismas from '../components/christmasComponents/christmas.vue';
 import h5shake from '../components/h5shakeComponents/h5shake.vue';
 import upload from '../components/uploadComponents/upload.vue';
+import fireframes from  '../components/fireframesComponents/fireframes.vue';
 //注册路由
 Vue.use(Router)
 
@@ -126,6 +127,11 @@ export default new Router({
       path:'/upload',
       name:'upload',
       component:upload
+    },
+    {
+      path:'/fireframes',
+      name:'fireframes',
+      component:fireframes
     }
   ]
 })

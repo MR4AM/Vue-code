@@ -16,6 +16,7 @@
       :cancel="()=>{this.modalShow=false}"
       :confirm="()=>{this.modalShow=false}"
     />
+    <!-- <jatabbarComponent/> -->
   </div>
 </template>
 <style lang="scss" scoped>
@@ -25,13 +26,15 @@
 import toastComponent from "../toastComponents/toast";
 import loadingComponent from "../loadingComponents/loading";
 import modalComponent from "../modalComponents/modal";
+import jatabbar from "../tabbarComponents/tabbar";
 // import './index.scss';
 export default {
   //引入组件
   components: {
     ToastComponent: toastComponent,
     LoadingComponent: loadingComponent,
-    ModalComponent: modalComponent
+    ModalComponent: modalComponent,
+    // jatabbarComponent:jatabbar
   },
   //存放常量及状态控制变量的控制data层
   data() {
@@ -51,7 +54,8 @@ export default {
         "城市定位及选择组件",
         "瀑布流列表",
         "h5实现摇一摇",
-        "图片上传组件"
+        "图片上传组件",
+        "canvas烟花效果"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -131,6 +135,9 @@ export default {
           break;
         case "图片上传组件":
           this.$router.push({name:'upload'});
+          break;
+        case "canvas烟花效果":
+          this.$router.push({name:"fireframes"});
           break;
       }
     },

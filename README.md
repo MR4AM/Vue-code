@@ -50,3 +50,6 @@ https://blog.csdn.net/weixin_42262436/article/details/80724653
 ## sass的进阶使用
 - > sass安装和使用 https://www.cnblogs.com/bettyling/p/6070734.html
 - > ruby下载官网 https://rubyinstaller.org/downloads/
+
+## 将vue项目部署到node服务器的参考
+- > https://www.jianshu.com/p/ce8766f3e68d
