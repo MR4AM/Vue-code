@@ -1,4 +1,4 @@
-// jatool常规逻辑函数归类
+// jatool常规逻辑函数模块
 export default class jabase {
   //判断值是否为空处理，常用于判断后端数据返回为空或不返回造成数据渲染过程中的断层，或者用户没有在表单中输入内容
   static ja_isNull(data) {
@@ -13,11 +13,18 @@ export default class jabase {
   }
   //判断字符串是否为中文，一般用于校对用户表单中的用户名是否输入合法
   static ja_strischinese(str) {
+    str = str.replace(/\s+/g, "");
     return /^([\u4E00-\u9FA5]|[\uFE30-\uFFA0])*$/gi.test(str);
   }
   //判断是否为电话号码
   static ja_strisphone(phone) {
+    phone = phone.replace(/\s+/g, "")
     return /^1[3|4|5|6|7|8|9][0-9]\d{8}$/.test(phone);
+  }
+  //判断是否为邮箱
+  static ja_strisemail(str) {
+    str = str.replace(/\s+/g, "");
+    return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(str);
   }
   //判断身份证号码是否合法
   /*
@@ -45,9 +52,9 @@ export default class jabase {
                   Wi 7 9 10 5 8 4 2 1 6 3 7 9 10 5 8 4 2 1
 
   */
- //130981199312253466
+  //130981199312253466
   static ja_idcardidentify(code) {
-    //  code =String(code)
+    code = code.replace(/\s+/g, "")
     var city = {
       11: "北京",
       12: "天津",
@@ -91,7 +98,7 @@ export default class jabase {
     if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
       tip = "身份证号格式错误";
       pass = false;
-    } else if (!city[String(code).substr(0, 2)*1]) {
+    } else if (!city[String(code).substr(0, 2) * 1]) {
       tip = "地址编码错误";
       pass = false;
     } else {
@@ -121,4 +128,5 @@ export default class jabase {
     if (!pass) console.log(tip);
     return pass;
   }
+
 }

@@ -46,11 +46,14 @@ export default {
     },
     mounted(){
         //将工具类中的各个函数对象解构出来
-        let {jastring,jadate,janumber,jabase} =jatool;
+        let {jastring,jadate,janumber,jabase,jaarray} =jatool;
         // console.log(jadate.ja_formatTime(new Date(),'{y}年{m}月{d}日 {h}:{i}:{s}'),'检测工具函数')
         //  console.log(jastring.ja_phonelock(13432895832),'检测工具函数')
         // console.log(janumber.ja_toThousands(1809898108209830,','),'金额每隔3位加逗号')
-        console.log(jabase.ja_idcardidentify(941723199503220019),'检测身份证号码是否合法')
+        // console.log(jabase.ja_idcardidentify(941723199503220019),'检测身份证号码是否合法');
+        // console.log(jaarray.ja_arrayunique2([1,2,2,3,4,55,5,5,5,5,5]),'检测数组去重2');
+        // console.log(jaarray.ja_arrayfilter('union',[1,2,3,4],[2,3,4,5]),'检测数组并集');
+          console.log(jaarray.ja_arrayfilter('intersect',[1,2,3,4],[2,3,4,5]),'检测数组交集集');
     },
     methods:{
         dateShow(aa){
