@@ -16,6 +16,7 @@
                     v-on:cancel="(value)=>{dateShow(value)}"
                 />
          </div>
+         <button @click="jscopy()">一键复制内容</button>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -27,6 +28,7 @@ import Vue from 'vue';
 import { Button, Cell, DatetimePicker} from 'vant';
 import 'vant/lib/index.css';
 // import utils as utils from '../../utils/utils';
+import jatool from '../../utils/jatool/jatool.js';
 Vue.use(Button);
 Vue.use(DatetimePicker);
 export default {
@@ -43,47 +45,24 @@ export default {
         }      
     },
     mounted(){
-        console.log(Button,'路由参数')
+        //将工具类中的各个函数对象解构出来
+        let {jastring,jadate,janumber,jabase} =jatool;
+        // console.log(jadate.ja_formatTime(new Date(),'{y}年{m}月{d}日 {h}:{i}:{s}'),'检测工具函数')
+        //  console.log(jastring.ja_phonelock(13432895832),'检测工具函数')
+        // console.log(janumber.ja_toThousands(1809898108209830,','),'金额每隔3位加逗号')
+        console.log(jabase.ja_idcardidentify(941723199503220019),'检测身份证号码是否合法')
     },
     methods:{
         dateShow(aa){
-            console.log(this.formatTime(aa),'检测一下传入参数');
+            let {jadate} =jatool;
             if(aa){
-                this.selectTime=this.formatTime(aa);
+                this.selectTime=jadate.ja_formatTime(aa);
             }
             this.dataShow=!this.dataShow;
         },
-        formatTime(time, cFormat) {
-            if (arguments.length === 0) return null
-            if ((time + '').length === 10) {
-                time = +time * 1000
-            }
-    
-            var format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}', date
-            if (typeof time === 'object') {
-                date = time
-            } else {
-                date = new Date(time)
-            }
-    
-            var formatObj = {
-                y: date.getFullYear(),
-                m: date.getMonth() + 1,
-                d: date.getDate(),
-                h: date.getHours(),
-                i: date.getMinutes(),
-                s: date.getSeconds(),
-                a: date.getDay()
-            }
-            var time_str = format.replace(/{(y|m|d|h|i|s|a)+}/g, (result, key) => {
-                var value = formatObj[key]
-                if (key === 'a') return ['一', '二', '三', '四', '五', '六', '日'][value - 1]
-                if (result.length > 0 && value < 10) {
-                    value = '0' + value
-                }
-                return value || 0
-            })
-            return time_str
+        jscopy(){
+            let {jastring} =jatool;
+            jastring.ja_jsCopy('复制后的内容');
         }
     },
 }

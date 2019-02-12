@@ -53,3 +53,6 @@ https://blog.csdn.net/weixin_42262436/article/details/80724653
 
 ## 将vue项目部署到node服务器的参考
 - > https://www.jianshu.com/p/ce8766f3e68d
+
+## 关于jatool.js
+- > jatool.js是针对js常用的业务方法按照js对象模块归类总结封装，主要用于复用逻辑层控制视图层的逻辑，用于快速应对复杂交互场景下逻辑层与视图层的结合。

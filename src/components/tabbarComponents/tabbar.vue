@@ -1,7 +1,7 @@
 <template>
     <div class="tabbarcom">
         <mt-tabbar v-model="selected">
-        <mt-tab-item :id="item.route" v-for="(item,idx) in iconlist" @click="changetab(item.route)">
+        <mt-tab-item :id="item.route" v-for="(item,idx) in iconlist" key="{{idx}}" @click="changetab(item.route)">
             <img slot="icon" :src="item.iconsrc">
             {{item.title}}
         </mt-tab-item>
