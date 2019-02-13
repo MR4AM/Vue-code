@@ -128,5 +128,115 @@ export default class jabase {
     if (!pass) console.log(tip);
     return pass;
   }
+  /**
+   *检测文件是否是图片、视频、文档
+   *
+   * @static
+   * @param {*} fileName 文件后缀
+   * @param {*} type 文件类型 1为图片检测，2为视频检测，3为文档检测
+   * @memberof jabase
+   */
+  static ja_checkfile(fileName,type){
+    switch(type){
+      case 1:
+      return /(gif|jpg|jpeg|png|GIF|JPG|PNG)$/ig.test(fileName);
+      case 2:
+      return /(mp4|mp3|flv|wav)$/ig.test(fileName);
+      case 3:
+      return /(doc|docx|xls|xlsx|pdf|txt|ppt|pptx|rar|zip|html|jsp|sql|htm|shtml|xml)$/ig.test(fileName);
+    }
 
+  }
+  /**防抖函数，函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。
+   *将几次操作合并为一此操作进行。原理是维护一个计时器，规定在delay时间后触发函数，但是在delay时间内再次触发的话，就会取消之前的计时器而重新设置。这样一来，只有最后一次操作能被触发。
+   *
+   * @static
+   * @param {Function} fn 事件处理函数
+   * @param {Number} duration 防抖间隔
+   * @returns
+   * @memberof jabase
+   */
+  static ja_debounce(fn, duration) {
+    var timeout = null;
+    return function () {
+      if (timeout !== null) clearTimeout(timeout);
+      timeout = setTimeout(fn, duration);
+    }
+  }
+  /**
+   *节流函数，函数节流（throttle）：当持续触发事件时，保证一定时间段内只调用一次事件处理函数。
+   *使得一定时间内只触发一次函数。原理是通过判断是否到达一定时间来触发函数。
+   *函数节流不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数，而函数防抖只是在最后一次事件后才触发一次函数。比如在页面的无限加载场景下，我们需要用户在滚动页面时，每隔一段时间发一次 Ajax 请求，而不是在用户停下滚动页面操作时才去请求数据。这样的场景，就适合用节流技术来实现。
+   * @static
+   * @param {*} fn 事件处理函数
+   * @param {*} delay 节流延时间隔
+   * @memberof jabase
+   */
+  static ja_throttle(fn, delay) {
+    var prev = Date.now();
+    return function () {
+      var context = this;
+      var args = arguments;
+      var now = Date.now();
+      if (now - prev >= delay) {
+        fn.apply(context, args);
+        prev = Date.now();
+      }
+    }
+  }
+  /**
+   *获取地址url上参数名为name的参数
+   *
+   * @static
+   * @param {*} url 访问地址url
+   * @param {*} name 参数key值
+   * @returns
+   * @memberof jabase
+   */
+  static ja_getUrlParam(url, name) {
+    //构造一个含有目标参数的正则表达式对象
+    const reg = new RegExp("(^|&)*" + name + "=([^&]*)(&|$)");
+    //匹配目标参数
+    let r = url.match(reg);
+    //返回参数值
+    if (r != null) return decodeURIComponent(r[2]);
+    return null;
+  }
+  /**
+   *将地址url的参数转换成对象输出
+   *
+   * @static
+   * @param {*} url 访问地址url
+   * @memberof jabase
+   */
+  static ja_getQueryObject(url) {
+    url = url == null ? window.location.href : url;
+    let search = url.substring(url.lastIndexOf("?") + 1);
+    let obj = {};
+    let reg = /([^?&=]+)=([^?&=]*)/g;
+    // [^?&=]+表示：除了？、&、=之外的一到多个字符
+    // [^?&=]*表示：除了？、&、=之外的0到多个字符（任意多个）
+    search.replace(reg, function (rs, $1, $2) {
+      let name = decodeURIComponent($1);
+      let val = decodeURIComponent($2);
+      obj[name] = val + '';
+      return rs;
+    });
+    return obj;
+  }
+  /**
+   *替换url中的参数
+   *
+   * @static
+   * @param {*} url 替换路径
+   * @param {*} paramName 参数名
+   * @param {*} replaceWith 替换val
+   * @returns
+   * @memberof jabase
+   */
+  static ja_replaceParamVal(url, paramName,replaceWith){
+    let reg=new RegExp('('+ paramName+'=)([^&]*)','gi');
+    let nUrl = url.replace(reg, paramName+'='+replaceWith);
+    return nUrl;
+  }
 }
