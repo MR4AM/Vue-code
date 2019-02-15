@@ -43,6 +43,9 @@ import store from './stores/index';
 // Vue.use(VueSocketio,socketio(hostapi));
 // import './common/styles/index.scss';
 /* eslint-disable no-new */
+// 引入vconsole
+import  VConsole  from  'vconsole'
+const  vConsole = new VConsole() //注意
 // 主函数实例化根节点入口,注入路由和stores
 new Vue({
   el: '#app',

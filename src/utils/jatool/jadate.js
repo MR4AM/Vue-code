@@ -98,7 +98,6 @@ export default class jsdate {
     }else{
         interval=setInterval(()=>{
             clock=this.ja_formatTime(new Date() +1000,cFormat);
-            console.log(clock,'000000')
             return clock;
         },1000);
     }
