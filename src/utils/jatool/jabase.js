@@ -239,4 +239,17 @@ export default class jabase {
     let nUrl = url.replace(reg, paramName+'='+replaceWith);
     return nUrl;
   }
+
+
+  /**
+   *  数据类型深克隆
+   *
+   * @static
+   * @param {*} data 需要深克隆得数据
+   * @returns
+   * @memberof jabase
+   */
+  static ja_clonedeep(data){
+      return JSON.stringify(JSON.parse(data));
+  }
 }

@@ -5,6 +5,7 @@ import janumber from './janumber';
 import jastorage from './jastorage';
 import jaarray from './jaarray';
 import jamath from './jamath';
+import jaspec from './jaspec';
 let jatool={
     jabase,
     jastring,
@@ -12,6 +13,7 @@ let jatool={
     janumber,
     jastorage,
     jaarray,
-    jamath
+    jamath,
+    jaspec
 }
 export default jatool;
