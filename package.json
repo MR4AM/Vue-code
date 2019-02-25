@@ -5,9 +5,9 @@
   "author": "limenghui <1479856243@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
-    "build": "node build/build.js"
+    "jadev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run jadev",
+    "jabuild": "node build/build.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
