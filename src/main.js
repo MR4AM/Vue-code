@@ -46,6 +46,12 @@ import store from './stores/index';
 // 引入vconsole
 import  VConsole  from  'vconsole'
 const  vConsole = new VConsole() //注意
+//引入基于vue的富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+Vue.use(VueQuillEditor)
 // 主函数实例化根节点入口,注入路由和stores
 new Vue({
   el: '#app',

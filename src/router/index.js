@@ -22,6 +22,7 @@ import chrismas from '../components/christmasComponents/christmas.vue';
 import h5shake from '../components/h5shakeComponents/h5shake.vue';
 import upload from '../components/uploadComponents/upload.vue';
 import fireframes from  '../components/fireframesComponents/fireframes.vue';
+import htmleditor from '../components/htmleditorComponents/htmleditor.vue';
 //注册路由
 Vue.use(Router)
 
@@ -132,6 +133,11 @@ export default new Router({
       path:'/fireframes',
       name:'fireframes',
       component:fireframes
+    },
+    {
+      path:'/htmleditor',
+      name:'htmleditor',
+      component:htmleditor
     }
   ]
 })

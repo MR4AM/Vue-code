@@ -55,7 +55,8 @@ export default {
         "瀑布流列表",
         "h5实现摇一摇",
         "图片上传组件",
-        "canvas烟花效果"
+        "canvas烟花效果",
+        "富文本编辑器"
       ],
       toastShow: false,
       toastContent: "toast提示一下哦",
@@ -138,6 +139,9 @@ export default {
           break;
         case "canvas烟花效果":
           this.$router.push({name:"fireframes"});
+          break;
+        case "富文本编辑器":
+          this.$router.push({name:'htmleditor'});
           break;
       }
     },
