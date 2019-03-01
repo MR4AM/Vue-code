@@ -15,7 +15,7 @@ export default {
     props:['toastShow','duration','content'],
     mounted(){
     },
-    methods(){}
+    methods:{}
 }
 </script>
 

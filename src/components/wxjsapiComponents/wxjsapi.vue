@@ -2,6 +2,10 @@
     <div class="wxjsapiCom">
         <button class="test" @click="request()">测试接口请求</button>
         <button class="btn" @click="chooseImage()">选择图片</button>
+        <div class="wxjump">
+            <button @click="wxjump()">测试一下微信浏览器自动跳转浏览器打开外部链接</button>
+        </div>
+        <iframe :src="iframeSrc" frameborder="0"></iframe>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -13,7 +17,7 @@ import wxjsbridge from '../../utils/wxconfig.js';
 export default {
     data(){
         return{
-
+            iframeSrc:''
         }
     },
     mounted(){
@@ -47,7 +51,15 @@ export default {
                 var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
                 }
             })
+        },
+        wxjump(){
+          jafetch.request('get','wxjump',{}).then((res)=>{
+            //   console.log(res.data.data,'ksjskjajkjsakjsakjkjsakjsakjsa')
+                window.location.href=res.data.data;
+                // this.iframeSrc='http://www.baidu.com';    
+            }); 
         }
+
     }
 }
 </script>
