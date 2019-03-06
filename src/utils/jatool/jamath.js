@@ -51,6 +51,6 @@ export default class jamath{
         for(var i=0;i<len;i++){
             strArr.push(str.split('')[Math.floor(Math.random()*str.length)]);
         }
-        return strArr.join('');
+        return '#'+strArr.join('');
     }
 }
