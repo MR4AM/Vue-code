@@ -21,6 +21,10 @@
             <p>时钟{{clocktime}}</p>
             <p>倒计时剩余{{countdown}}</p>
          </div>
+         <div class="vuex">
+             <h1>vuex测试区域</h1>
+             <button @click="inmit()">触发</button>
+         </div>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -51,9 +55,13 @@ export default {
             countdown:'',
             countdownc:'',
             coount:(new Date().getTime()+30030030303030),
+            distance:''
         }      
     },
     mounted(){
+        let distance=this.$store;
+        this.distance=distance;
+        console.log(this.$store)
         //将工具类中的各个函数对象解构出来
         let {jastring,jadate,janumber,jabase,jaarray,jamath} =jatool;
         // console.log(jadate.ja_formatTime(new Date(),'{y}年{M}月{d}日 {h}:{m}:{s} {a}'),'检测工具函数')
@@ -93,6 +101,11 @@ export default {
         jscopy(){
             let {jastring} =jatool;
             jastring.ja_jsCopy('复制后的内容');
+        },
+        inmit(){
+            console.log(88888)
+            this.distance.commit('increase');
+            console.log(this.distance.state.count,'检测vuex中state的变化')
         }
     },
 }

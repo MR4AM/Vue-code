@@ -1,6 +1,9 @@
 # vue-code项目介绍
 
 > 基于vue搭建javue组件化市场及常用vue业务案例，主要包括组件封装类、页面模块类，业务模块类
+
+## vuex
+- vuex是一个管理全局组件状态的vue工具，
 ### 项目启动运行
 - > git clone 将代码克隆至本地
 - > npm install 安装项目所需依赖包
@@ -27,6 +30,8 @@ https://blog.csdn.net/weixin_42262436/article/details/80724653
 - git branch 查看代码分支
 - git checkout branchname 切换到branchname的分支
 - git checkout  -b branchname 创建分支名为branchname的分支
+- git push origin -d branchname 删除远程名为branchname的分支
+- git branch -d branchname 删除本地名为branchname的分支
 - git push -f origin branchname 将修改回退后的代码强推到远程仓库
 - git pull --allow-unrelated-histories 允许拉取两个不同源的分支代码
 - git push origin branchname --allow-unrelated-histories 允许推送两个不同源的分支代码到远程

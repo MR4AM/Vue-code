@@ -3,8 +3,8 @@
   <div class="indexComponents" id="indexComponents">
     <h1 class="title">javue组件</h1>
     <p v-for="(item,index) in comList" class="comlist" @click="test(item)">{{item}}</p>
+    <p v-on:click="linkTo('test')" class="comlist">功能测试页面</p>
     <p v-on:click="linkTo('cube')" class="comlist">查看cube组件ui库实例组件</p>
-    <p v-on:click="linkTo('test')" class="comlist">查看vant组件ui库实例组件</p>
     <p v-on:click="linkTo('element')" class="comlist">查看element组件ui库实例组件</p>
     <p v-on:click="linkTo('socketio')" class="comlist">基于socketio实现聊天通信</p>
     <ToastComponent :toastShow="toastShow" :duration="3000" :content="toastContent" />
