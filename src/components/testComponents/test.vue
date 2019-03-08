@@ -103,9 +103,9 @@ export default {
             jastring.ja_jsCopy('复制后的内容');
         },
         inmit(){
-            console.log(88888)
-            this.distance.commit('increase');
-            console.log(this.distance.state.count,'检测vuex中state的变化')
+            console.log(this.$store,88888)
+            this.$store.commit('increase');
+            console.log(this.$store.commit,'检测vuex中state的变化')
         }
     },
 }

@@ -5,11 +5,13 @@ const state={
 const getters={
 
 }
+// 异步操作
 const actions={
 
 }
+// 同步操作
 const mutations={
-    increase(){
+    increase(state,data){
         state.count++
     }
 }

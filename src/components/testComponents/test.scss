@@ -1,6 +1,8 @@
+@import '../../common//styles/common.scss';
 .testcomponents{
     position: relative;
-    height: 500px;
+    height: 1000px;
+    overflow: hidden;
     .datepicker{
         margin-top: Rem(100);
         width: 100%;
@@ -10,5 +12,15 @@
     }
     .testview{
         margin-top: 100px;
+    }
+    .vuex{
+        margin: 50px;
+        button{
+            color: #fff;
+            width: Rem(200);
+            height: Rem(80);
+            line-height: Rem(80);
+            background:orange;
+        }
     }
 }
