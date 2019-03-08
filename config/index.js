@@ -50,7 +50,7 @@ module.exports = {
     // 构建输出的二级目录
     assetsSubDirectory: 'static',
     // 构建发布的根目录，可配置为资源服务器域名或 CDN 域名
-    assetsPublicPath: '/',
+    assetsPublicPath: 'https://mr4am.github.io/',
 
     /**
      * Source Maps
