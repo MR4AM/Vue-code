@@ -1,3 +1,4 @@
+import wx from 'weixin-js-sdk'
 let wxjsbridge={
     wxconfig(config){
         wx.config({

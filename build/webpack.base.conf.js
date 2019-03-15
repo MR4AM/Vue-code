@@ -13,7 +13,8 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    // app: './src/main.js',//未加ssr之前入口
+    app:'./src/entry-client.js'
   },
   output: {
     path: config.build.assetsRoot,
