@@ -38,7 +38,7 @@ export default {
     methods:{
         //wxservice/wxjssdkconfig/wxpublictoken 获取token
         request(){
-            jafetch.request('get','wxservice/wxjssdkconfig/wxpublictoken',{}).then((res)=>{
+            jafetch.request('get','test/testApi',{}).then((res)=>{
                 console.log(res,'ppppp')     
             });     
         },

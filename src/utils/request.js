@@ -6,7 +6,7 @@ Vue.use(VueAxios, axios);
 
 //定义请求服务器公共域及服务名称
 // const publicUrl='http://23w4962t28.imwork.net:44586';
-const publicUrl =`http://192.168.8.48:8082/`;
+const publicUrl =`http://www.jasonlee.top/`;
 let ajax={
       request(methods,url,questdata){
         //将接口url进行拼接
