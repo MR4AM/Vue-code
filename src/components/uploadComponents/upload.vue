@@ -17,6 +17,8 @@
     @import './upload.scss';
 </style>
 <script>
+import jafetch from '../../utils/request.js';
+import utils from '../../utils/utils.js';
 export default {
     data(){
         return{
@@ -29,14 +31,8 @@ export default {
     methods:{
         click(){},
         change(e){
-            var files = e.target.files,
-            reader = new FileReader();
-            if(files && files[0]){
-                reader.onload =(ev)=>{
-                    this.imgSrc=ev.target.result;
-                }
-                reader.readAsDataURL(files[0]);
-            }
+            //http://192.168.9.69:520/upload/singleUpload
+            utils.unloadFile(e,'http://www.jasonlee.top/upload/singleUpload',this)
         }
     }
 }

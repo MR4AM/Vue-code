@@ -38,9 +38,26 @@ export default {
     methods:{
         //wxservice/wxjssdkconfig/wxpublictoken 获取token
         request(){
-            jafetch.request('get','test/testApi',{}).then((res)=>{
+            //查询
+            // jafetch.request('get','test/testApi?userName=jasonlee',{}).then((res)=>{
+            //     console.log(res,'ppppp')     
+            // });
+            //插入
+            // jafetch.request('post','test/testInsert',{userName:'james',phone:"12112321312414",idCard:"444124413251",email:'128768@qq.com',password:'80997987879'}).then((res)=>{
+            //     console.log(res,'ppppp')     
+            // });
+            //更新   
+            // jafetch.request('post','test/testUpDate',{userName:'bb',phone:"11",idCard:"11",email:'abc@qq.com'}).then((res)=>{
+            //     console.log(res,'ppppp')     
+            // });
+            //删除
+            //  jafetch.request('get','test/testDelete?userName=akm',{}).then((res)=>{
+            //     console.log(res,'ppppp')     
+            // });
+            //md5 加密
+             jafetch.request('post','test/testMd5',{userName:'james',password:'80997987879'}).then((res)=>{
                 console.log(res,'ppppp')     
-            });     
+            }); 
         },
         chooseImage(){
             wx.chooseImage({

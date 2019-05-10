@@ -1,3 +1,4 @@
+import jafetch from './request';
 class utils{
     static getParams(that,par){
         return that.$route.params[par]
@@ -68,6 +69,28 @@ class utils{
         lastX = x;
         lastY = y;
         lastZ=z;
+    }
+    //post 请求上传文件
+    static unloadFile(e,postUrl,_this){
+        var files = e.target.files,
+            reader = new FileReader(),
+            newFormData= new FormData();
+            for(var i = 0; i < files.length; i++){
+                newFormData.append("photos", files[i]);                
+            }
+            jafetch.request('post',
+                postUrl,
+                newFormData,
+                true,
+                ).then((res)=>{
+                console.log(res,'ppppp');
+                 if(files && files[0]){
+                    reader.onload =(ev)=>{
+                        _this.imgSrc=ev.target.result
+                    }
+                    reader.readAsDataURL(files[0]);
+                }     
+            });
     }
 }
 export default utils;

@@ -11,9 +11,11 @@ axios.defaults.headers = {
 // const publicUrl='http://23w4962t28.imwork.net:44586';
 const publicUrl =`http://www.jasonlee.top/`;
 let ajax={
-      request(methods,url,questdata){
+      request(methods,url,questdata,fullurl){
         //将接口url进行拼接
-        url=publicUrl+url;
+        if(!fullurl){
+            url=publicUrl+url;
+        }
         if(methods == 'get'){
             return new Promise((resolve,reject)=>{
                 axios.get(url,questdata).then((res)=>{
