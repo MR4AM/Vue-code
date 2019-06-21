@@ -21,7 +21,7 @@ const city = r => require.ensure([], () => r(require('../components/cityComponen
 const masonry = r => require.ensure([], () => r(require('../components/masonryComponents/masonry.vue')), 'masonry');
 const christmas = r => require.ensure([], () => r(require('../components/christmasComponents/christmas.vue')), 'christmas');
 const h5shake = r => require.ensure([], () => r(require('../components/h5shakeComponents/h5shake.vue')), 'h5shake');
-const upload = r => require.ensure([], () => r(require('../components/uploadComponents/upload.vue')), 'upload');
+const upload = r => require.ensure([], () => r(require('../components/uploadComponents/upload2.vue')), 'upload');
 const fireframes = r => require.ensure([], () => r(require('../components/fireframesComponents/fireframes.vue')), 'fireframes');
 const htmleditor = r => require.ensure([], () => r(require('../components/htmleditorComponents/htmleditor.vue')), 'htmleditor');
 export default new Router({

@@ -27,13 +27,33 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
 // 全局引入echarts,不过实际开发中会考虑到echart包体积过大而按开发需要按需引入包
 import echarts from 'echarts'
-Vue.prototype.$echarts = echarts 
+Vue.prototype.$echarts = echarts
 //引入百度地图
 import BaiduMap from 'vue-baidu-map'
 Vue.use(BaiduMap, {
   // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
   ak: '2QUQ7bVf2yDIuFij5LKAfGzfUndbPsFN'
 })
+import VueHtml5Plus from 'vue-html5plus';
+/** 集成h5plus*/
+var onPlusReady = function (callback, context = this) {
+  if (window.plus) {
+    callback.call(context)
+  } else {
+    document.addEventListener('plusready', callback.bind(context))
+  }
+}
+Vue.mixin({
+  beforeCreate() {
+    onPlusReady(() => {
+      this.plusReady = true
+    }, this)
+  },
+  methods: {
+    onPlusReady: onPlusReady
+  }
+})
+Vue.use(VueHtml5Plus);
 //引入vuex
 import store from './stores/index';
 //vue内建立socket
@@ -44,8 +64,8 @@ import store from './stores/index';
 // import './common/styles/index.scss';
 /* eslint-disable no-new */
 // 引入vconsole
-import  VConsole  from  'vconsole'
-const  vConsole = new VConsole() //注意
+import VConsole from 'vconsole'
+const vConsole = new VConsole() //注意
 //引入基于vue的富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
@@ -57,6 +77,8 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
