@@ -10,7 +10,7 @@
     "jabuild": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cube-ui": "^1.12.8",
     "echarts": "^4.2.0-rc.2",
     "mint-ui": "^2.2.13",
